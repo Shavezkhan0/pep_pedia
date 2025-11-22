@@ -130,8 +130,8 @@ export default function Navbar() {
             <Popover.Root open={moreOpen} onOpenChange={setMoreOpen}>
               <Popover.Trigger asChild>
                 <button
-                  className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-full bg-gray-100 ${
-                    moreOpen ? "text-blue-600" : "text-gray-600"
+                  className={`flex flex-col items-center justify-center gap-1 px-4 py-2 rounded-full ${
+                    moreOpen ? "text-blue-600 bg-gray-100 " : "text-gray-600"
                   }`}
                 >
                   <IoIosMore className="w-6 h-6" />
