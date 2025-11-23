@@ -126,7 +126,7 @@ const FilterCategories: React.FC<FilterCategoriesProps> = ({
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50" />
-        <Dialog.Content className="fixed bottom-0 left-0 right-0 md:top-4 md:bottom-4 md:left-4 md:right-auto w-full md:max-w-sm h-[90vh] md:h-auto bg-white shadow-2xl z-50 flex flex-col overflow-hidden rounded-t-3xl md:rounded-2xl animate-slide-in-up">
+        <Dialog.Content className="fixed bottom-0 left-0 right-0 md:top-4 md:bottom-4 md:left-4 md:right-auto w-full md:max-w-sm h-[90vh] md:h-auto bg-white shadow-2xl z-50 flex flex-col overflow-hidden rounded-t-3xl md:rounded-2xl animate-filter-slide">
           {/* Drag Handle - Mobile Only */}
           <div className="md:hidden flex justify-center pt-3 pb-2">
             <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>

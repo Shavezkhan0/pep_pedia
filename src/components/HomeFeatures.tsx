@@ -144,24 +144,26 @@ const featuredPeptides = [
 
 const HomeFeatures: React.FC = () => {
   return (
-    <section className="w-full bg-gray-50 max-w-7xl mx-auto px-6 md:px-8 lg:px-24 xl:px-32 py-16 mt-16">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">Featured</h2>
-        <Link
-          href="/browse"
-          className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition-colors cursor-pointer"
-        >
-          Browse All
-          <span>→</span>
-        </Link>
-      </div>
+    <section className="w-full bg-gray-50 py-16 mt-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-24 xl:px-32">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-3xl font-bold text-gray-900">Featured</h2>
+          <Link
+            href="/browse"
+            className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 transition-colors cursor-pointer"
+          >
+            Browse All
+            <span>→</span>
+          </Link>
+        </div>
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featuredPeptides.map((peptide, index) => (
-          <Card key={index} {...peptide} />
-        ))}
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredPeptides.map((peptide, index) => (
+            <Card key={index} {...peptide} />
+          ))}
+        </div>
       </div>
     </section>
   );

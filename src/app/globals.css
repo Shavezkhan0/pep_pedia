@@ -31,11 +31,9 @@
 @keyframes slide-in-left {
   from {
     transform: translateX(-100%);
-    opacity: 0;
   }
   to {
     transform: translateX(0);
-    opacity: 1;
   }
 }
 
@@ -71,6 +69,26 @@
 @media (min-width: 768px) {
   .animate-slide-in-up {
     animation: slide-in-right 0.3s ease-out;
+  }
+}
+
+/* Filter Categories: slides up on mobile, left on desktop */
+.animate-filter-slide {
+  animation: slide-in-up 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .animate-filter-slide {
+    animation: slide-in-left 0.3s ease-out;
+  }
+  
+  /* Ensure Radix Dialog respects the animation */
+  [data-radix-dialog-content].animate-filter-slide {
+    animation: slide-in-left 0.3s ease-out;
+  }
+  
+  [data-radix-dialog-content][data-state="open"].animate-filter-slide {
+    animation: slide-in-left 0.3s ease-out;
   }
 }
 
