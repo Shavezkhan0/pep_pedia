@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useUser, SignInButton, UserButton } from "@clerk/nextjs";
 import * as Popover from "@radix-ui/react-popover";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
@@ -19,6 +20,7 @@ import Assistant from "./Assistant";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { isSignedIn, user } = useUser();
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [requestPeptideOpen, setRequestPeptideOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
@@ -66,13 +68,22 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Login Button */}
-              <Link
-                href="/login"
-                className="px-3 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-normal"
-              >
-                Login
-              </Link>
+              {/* Login/User Button */}
+              {isSignedIn ? (
+                <UserButton 
+                  appearance={{
+                    elements: {
+                      avatarBox: "w-8 h-8",
+                    },
+                  }}
+                />
+              ) : (
+                <SignInButton mode="modal">
+                  <button className="px-3 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-normal hover:bg-gray-200 transition-colors cursor-pointer">
+                    Login
+                  </button>
+                </SignInButton>
+              )}
             </div>
           </div>
         </div>
@@ -146,14 +157,33 @@ export default function Navbar() {
                   align="end"
                 >
                   <div className="flex flex-col">
-                    <Link
-                      href="/login"
-                      onClick={() => setMoreOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-100 transition-colors cursor-pointer"
-                    >
-                      <IoPersonOutline className="w-5 h-5 text-blue-500" />
-                      <span className="text-sm text-blue-500 font-normal">Log In</span>
-                    </Link>
+                    {isSignedIn ? (
+                      <>
+                        <div className="px-4 py-2.5 flex items-center gap-3">
+                          <UserButton 
+                            appearance={{
+                              elements: {
+                                avatarBox: "w-6 h-6",
+                              },
+                            }}
+                          />
+                          <span className="text-sm text-gray-900 font-medium">
+                            {user?.firstName || user?.emailAddresses[0]?.emailAddress || "User"}
+                          </span>
+                        </div>
+                        <div className="border-t border-gray-200 my-1"></div>
+                      </>
+                    ) : (
+                      <SignInButton mode="modal">
+                        <button
+                          onClick={() => setMoreOpen(false)}
+                          className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-100 transition-colors cursor-pointer w-full text-left"
+                        >
+                          <IoPersonOutline className="w-5 h-5 text-blue-500" />
+                          <span className="text-sm text-blue-500 font-normal">Log In</span>
+                        </button>
+                      </SignInButton>
+                    )}
                     <div className="border-t border-gray-200 my-1"></div>
                     <button
                       onClick={() => {

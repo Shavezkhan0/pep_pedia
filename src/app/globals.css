@@ -28,6 +28,17 @@
   }
 }
 
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @keyframes slide-in-up {
   from {
     transform: translateY(100%);
@@ -39,6 +50,18 @@
 
 .animate-slide-in-right {
   animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+[data-radix-dialog-content][data-state="open"].animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+[data-radix-dialog-content].animate-slide-in-left {
+  transform: translateX(-100%);
 }
 
 .animate-slide-in-up {
