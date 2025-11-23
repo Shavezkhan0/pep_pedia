@@ -45,14 +45,14 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <Link href={link} className="block h-full">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 flex flex-col hover:shadow-lg hover:scale-[1.02] hover:border-gray-300 transition-all duration-300 ease-out cursor-pointer relative group h-full">
+      <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-5 flex flex-col hover:shadow-lg hover:scale-[1.02] hover:border-gray-300 transition-all duration-300 ease-out cursor-pointer relative group h-full">
         {/* Bookmark Icon */}
         <button
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
           }}
-          className="absolute top-5 right-5 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer z-10"
+          className="absolute top-5 right-5 w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-blue-600 transition-all cursor-pointer z-10 hover:shadow-sm"
         >
           <IoBookmarkOutline className="w-5 h-5" />
         </button>

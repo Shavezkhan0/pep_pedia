@@ -17,6 +17,7 @@ import { IoMailOutline } from "react-icons/io5";
 import Calculator from "./Calculator";
 import RequestPeptide from "./RequestPeptide";
 import Assistant from "./Assistant";
+import Contact from "./Contact";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -24,6 +25,7 @@ export default function Navbar() {
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [requestPeptideOpen, setRequestPeptideOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
 
   return (
@@ -203,14 +205,16 @@ export default function Navbar() {
                       <IoCafeOutline className="w-5 h-5 text-gray-900" />
                       <span className="text-sm text-gray-900">Support PepPedia</span>
                     </Link>
-                    <Link
-                      href="/contact"
-                      onClick={() => setMoreOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-100 transition-colors cursor-pointer"
+                    <button
+                      onClick={() => {
+                        setContactOpen(true);
+                        setMoreOpen(false);
+                      }}
+                      className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-100 transition-colors cursor-pointer w-full text-left"
                     >
                       <IoMailOutline className="w-5 h-5 text-gray-900" />
                       <span className="text-sm text-gray-900">Contact</span>
-                    </Link>
+                    </button>
                   </div>
                 </Popover.Content>
               </Popover.Portal>
@@ -227,6 +231,9 @@ export default function Navbar() {
       
       {/* Assistant Modal */}
       <Assistant open={assistantOpen} onOpenChange={setAssistantOpen} />
+      
+      {/* Contact Modal */}
+      <Contact open={contactOpen} onOpenChange={setContactOpen} />
     </>
   );
 }

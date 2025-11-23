@@ -144,7 +144,7 @@ const featuredPeptides = [
 
 const HomeFeatures: React.FC = () => {
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 md:px-8 lg:px-24 xl:px-32 py-16 mt-16">
+    <section className="w-full bg-gray-50 max-w-7xl mx-auto px-6 md:px-8 lg:px-24 xl:px-32 py-16 mt-16">
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-3xl font-bold text-gray-900">Featured</h2>
