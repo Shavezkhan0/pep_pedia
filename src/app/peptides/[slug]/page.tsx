@@ -54,7 +54,7 @@ export default function PeptideDetailPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  
+
   // Survey State
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [showThankYou, setShowThankYou] = useState(false);
@@ -211,10 +211,10 @@ export default function PeptideDetailPage() {
                   recentPublications={peptide.references.recentPublications}
                   onEdit={() => setEditReferencesOpen(true)}
                 />
-              </div>
+            </div>
 
-              {/* Right Column - Sidebar (1/3 width) */}
-              <div className="lg:col-span-1 space-y-6">
+            {/* Right Column - Sidebar (1/3 width) */}
+            <div className="lg:col-span-1 space-y-6">
                 <QuickStartGuide
                   quickStart={peptide.quickStart}
                   effectsTimeline={peptide.effectsTimeline}
@@ -263,8 +263,8 @@ export default function PeptideDetailPage() {
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
 
       {/* Supporters Section */}
       <Supporters />
