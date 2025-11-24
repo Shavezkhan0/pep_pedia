@@ -9,11 +9,10 @@ import { toast } from 'sonner';
 export default function EditMolecularInfo({
   open,
   onOpenChange,
-  molecularInfo,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  molecularInfo: {
+  molecularInfo?: {
     weight: string;
     length: string;
     type: string;

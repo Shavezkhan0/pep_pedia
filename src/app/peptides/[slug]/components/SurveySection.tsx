@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 interface SurveySectionProps {
   currentQuestion: number;
   showThankYou: boolean;

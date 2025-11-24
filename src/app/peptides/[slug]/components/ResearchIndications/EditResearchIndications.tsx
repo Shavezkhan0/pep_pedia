@@ -16,13 +16,12 @@ interface Indication {
 interface EditResearchIndicationsProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  indications: Indication[];
+  indications?: Indication[];
 }
 
 export default function EditResearchIndications({
   open,
   onOpenChange,
-  indications,
 }: EditResearchIndicationsProps) {
   const [reason, setReason] = useState("");
   const [sources, setSources] = useState("");

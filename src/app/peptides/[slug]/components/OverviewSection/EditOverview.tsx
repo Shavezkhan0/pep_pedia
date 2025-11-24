@@ -9,14 +9,13 @@ import { toast } from 'sonner';
 export default function EditOverview({
   open,
   onOpenChange,
-  peptideTitle,
   overview,
   keyBenefits,
   mechanism,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  peptideTitle: string;
+  peptideTitle?: string;
   overview: string;
   keyBenefits: string[];
   mechanism: string;
