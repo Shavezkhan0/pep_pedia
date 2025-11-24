@@ -26,5 +26,8 @@ jobs:
         run: npm run lint
 
       - name: Build project
+        env:
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_placeholder
+          CLERK_SECRET_KEY: sk_test_placeholder
         run: npm run build
 
