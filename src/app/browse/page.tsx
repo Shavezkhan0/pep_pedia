@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+
+// Force dynamic rendering to avoid Clerk validation during build
+export const dynamic = 'force-dynamic';
 import { IoSearchOutline } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
 import { IoFilterOutline } from "react-icons/io5";
