@@ -92,6 +92,37 @@
   }
 }
 
+/* Poll slide animations */
+@keyframes slide-poll-right {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-poll-left {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-poll-right {
+  animation: slide-poll-right 0.3s ease-out;
+}
+
+.animate-slide-poll-left {
+  animation: slide-poll-left 0.3s ease-out;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */

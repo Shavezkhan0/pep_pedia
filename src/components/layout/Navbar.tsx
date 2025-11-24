@@ -14,10 +14,10 @@ import { IoPersonOutline } from "react-icons/io5";
 import { IoAddOutline } from "react-icons/io5";
 import { IoCafeOutline } from "react-icons/io5";
 import { IoMailOutline } from "react-icons/io5";
-import Calculator from "./Calculator";
-import RequestPeptide from "./RequestPeptide";
-import Assistant from "./Assistant";
-import Contact from "./Contact";
+import Calculator from "../modals/Calculator";
+import RequestPeptide from "../modals/RequestPeptide";
+import Assistant from "../modals/Assistant";
+import Contact from "../modals/Contact";
 
 export default function Navbar() {
   const pathname = usePathname();

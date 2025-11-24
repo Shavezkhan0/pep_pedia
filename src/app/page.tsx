@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
-import HomeFeatures from "@/components/HomeFeatures";
-import Supporters from "@/components/Supporters";
+import HomeFeatures from "@/components/cards/HomeFeatures";
+import Supporters from "@/components/cards/Supporters";
 
 export default function Home() {
   const [searchValue, setSearchValue] = useState("");

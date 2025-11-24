@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import {
   ClerkProvider,
 } from '@clerk/nextjs'
+import { Toaster } from 'sonner'
 
 
 const geistSans = Geist({
@@ -36,6 +37,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Toaster position="top-center" richColors />
         </body>
       </html>
     </ClerkProvider>

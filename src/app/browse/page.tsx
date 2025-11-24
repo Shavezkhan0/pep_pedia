@@ -5,10 +5,10 @@ import { IoSearchOutline } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
 import { IoFilterOutline } from "react-icons/io5";
 import { IoChevronDownOutline } from "react-icons/io5";
-import Card from "@/components/Card";
-import RequestPeptide from "@/components/RequestPeptide";
-import FilterCategories from "@/components/FilterCategories";
-import Supporters from "@/components/Supporters";
+import Card from "@/components/cards/Card";
+import RequestPeptide from "@/components/modals/RequestPeptide";
+import FilterCategories from "@/components/filters/FilterCategories";
+import Supporters from "@/components/cards/Supporters";
 
 // Sample peptides data - in a real app, this would come from an API
 const allPeptides = [
