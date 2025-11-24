@@ -5,10 +5,15 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
 
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      checks: write
 
     steps:
       - name: Checkout code
@@ -25,7 +30,9 @@ jobs:
 
       - name: Run linter
         run: npm run lint
+        continue-on-error: false
 
       - name: Build project
         run: npm run build
+        continue-on-error: false
 
